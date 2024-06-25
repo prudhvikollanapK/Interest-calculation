@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../OTT" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Snapshott" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Snapshott/backend-bkp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../Snapshott/frontend-web" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../aim-frontend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../fatmug" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../market/frontend2/horizon-ui-chakra" vcs="Git" />
+  </component>
+</project>

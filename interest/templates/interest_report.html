@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interest Report</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .export-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .export-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interest Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Flat No.</th>
+                <th>Customer Code</th>
+                <th>Customer Name</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Due Amount</th>
+                <th>Received Date</th>
+                <th>Receipt Type</th>
+                <th>Amount Received</th>
+                <th>No. of Delays</th>
+                <th>Percentage</th>
+                <th>Interest</th>
+                <th>GST @ 18%</th>
+                <th>Total Interest</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if report_data %}
+                {% for row in report_data %}
+                <tr>
+                    <td>{{ row.flat_no }}</td>
+                    <td>{{ row.customer_code }}</td>
+                    <td>{{ row.customer_name }}</td>
+                    <td>{{ row.description }}</td>
+                    <td>{{ row.due_date }}</td>
+                    <td>{{ row.due_amount }}</td>
+                    <td>{{ row.received_date }}</td>
+                    <td>{{ row.receipt_type }}</td>
+                    <td>{{ row.amount_received }}</td>
+                    <td>{{ row.no_of_delays }}</td>
+                    <td>{{ row.percentage }}</td>
+                    <td>{{ row.interest }}</td>
+                    <td>{{ row.gst }}</td>
+                    <td>{{ row.total_interest }}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="14">No data available</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <form method="get" action="{% url 'export_to_excel' %}">
+        <button type="submit" class="export-button">Export to Excel</button>
+    </form>
+
+</body>
+</html>
